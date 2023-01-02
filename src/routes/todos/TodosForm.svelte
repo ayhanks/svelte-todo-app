@@ -1,14 +1,18 @@
 <script lang="ts">
+	import { todos } from '$lib/store/todosStore';
 	import type { TodosType } from '$lib/types';
-	import { createEventDispatcher } from 'svelte';
 	let todoText = '';
-
-	const dispatch = createEventDispatcher();
 
 	const handleAddTodo = () => {
 		if (!todoText) return;
 
-		dispatch('addTodo', <TodosType>{ title: todoText, id: crypto.randomUUID(), status: 'idle' });
+		const todoData: TodosType = {
+			title: todoText,
+			id: crypto.randomUUID(),
+			status: 'idle'
+		};
+
+		todos.addTodo(todoData);
 		todoText = '';
 	};
 </script>
