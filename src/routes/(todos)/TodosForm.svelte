@@ -27,6 +27,7 @@
 			display: flex;
 			flex-direction: column;
 			gap: 10px;
+			color: red;
 		}
 		button {
 			background-color: orangered;

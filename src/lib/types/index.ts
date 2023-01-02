@@ -1,8 +1,7 @@
-type TodosTypeStatus = "done" | "idle" 
+type TodosTypeStatus = 'done' | 'idle';
 
 export type TodosType = {
-    id: string,
-    title: string,
-    status: TodosTypeStatus
-}
-
+	id: string;
+	title: string;
+	status: TodosTypeStatus;
+};
